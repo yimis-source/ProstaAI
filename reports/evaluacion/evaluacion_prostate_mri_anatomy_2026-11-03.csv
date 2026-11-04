@@ -1,0 +1,6 @@
+caso,conjunto,dice,iou,tiempo_s
+prostate_13,prueba,0.901181,0.820136,13.3
+prostate_17,prueba,0.909696,0.834350,13.1
+prostate_28,prueba,0.831969,0.712283,8.7
+prostate_34,prueba,0.910451,0.835622,10.0
+prostate_44,prueba,0.908985,0.833155,21.5
