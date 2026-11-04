@@ -1,0 +1,51 @@
+# Entornos y dependencias instaladas
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Configuración local y secretos
+.env
+.env.*
+!.env.example
+
+# Almacenamiento privado, base de datos local, pesos y datos descargados
+/almacenamiento/
+/.pgdata/
+/modelos/
+/datos/
+*.nii
+*.nii.gz
+*.dcm
+*.zip
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Cachés y resultados de pruebas
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.vite/
+
+# Herramientas locales del intento anterior
+
+# Sistema operativo y editores
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Descargas y conversiones locales de datos externos
+/entrenamiento/exterior/
+/convertidas/
+
+# Documentación interna de trabajo (local, no se versiona)
+/devdocs/
