@@ -3,6 +3,10 @@
 Aplicación académica y experimental, **no diagnóstica**. Esta carpeta contiene lo necesario para
 reproducir la división de datos, el ajuste fino de la UNet 3D y la evaluación (RA-01).
 
+> **Estado:** la aplicación usa por ahora el modelo preentrenado `prostate_mri_anatomy` sin ajuste (decisión del
+> 04/11/2026; ver `docs-tecnicos/modelo-y-licencias.md`). El ajuste fino de esta carpeta es una mejora posterior:
+> solo se adopta si supera el Dice del preentrenado (0,8925) en el mismo conjunto de prueba.
+
 | Archivo | Función |
 |---|---|
 | `division.py` | División por paciente 70/15/15 (semilla 2026) y verificación de que no hay pacientes repetidos (RC-04). Escribe `division_task05.json`. |

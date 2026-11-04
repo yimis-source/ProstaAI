@@ -31,6 +31,7 @@ Patrones aplicados: Facade (`ProcessingService`), Template Method (`BasePipeline
 | `docs/gestion/` | Acta de Constitución del proyecto |
 | `docs/ejecucion/` | Análisis y diseño: requisitos, arquitectura, módulos, modelo de datos, inconsistencias, diagramas y pantallas (`assets/pantallas/`); los documentos completos están en `fuentes/` |
 | `docs-tecnicos/especificacion-tecnica.md` | Contrato técnico del código: estructura, API, configuración y pruebas |
+| `docs-tecnicos/modelo-y-licencias.md` | Modelo en uso, con qué datos y cómo fue entrenado, licencias y riesgos de derechos |
 | `entrenamiento/README.md` | Entrenamiento, ajuste y evaluación del modelo en Google Colab |
 | `reports/` | Estado actual del desarrollo e informes de evaluación del modelo |
 
@@ -59,7 +60,7 @@ cd frontend && npm run build
 
 ## Modelo y datos
 
-- Modelo: bundle `prostate_mri_anatomy` del MONAI Model Zoo (Apache 2.0), entrenado con Prostate158. Ficha en `modelos/prostate_mri_anatomy/FICHA.md` tras la descarga.
+- Modelo: por ahora se usa el bundle preentrenado `prostate_mri_anatomy` del MONAI Model Zoo (Apache 2.0), entrenado por sus autores con Prostate158 (T2w, 3 T). Con qué y cómo se entrenó, sus licencias y los riesgos de uso están en `docs-tecnicos/modelo-y-licencias.md`. Ficha en `modelos/prostate_mri_anatomy/FICHA.md` tras la descarga.
 - Entrenamiento y evaluación propios (Google Colab): ver `entrenamiento/README.md`. La división por paciente está en `entrenamiento/division_task05.json` y los informes de evaluación en `reports/evaluacion/`.
 
 ## Privacidad

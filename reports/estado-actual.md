@@ -23,7 +23,7 @@ Rama de trabajo: `desarrollo` (creada desde `main`), pendiente de revisión por 
 - El pipeline se reconstruía en cada trabajo y releía los pesos del disco → ahora se construye una vez y se reutiliza.
 
 ## Decisiones técnicas por validar con el equipo
-1. **Modelo**: bundle MONAI `prostate_mri_anatomy` (Apache 2.0, entrenado con Prostate158), usado como U-Net preentrenada. Hay scripts para entrenar/ajustar en Colab (`entrenamiento/`).
+1. **Modelo** (decidido por el equipo el 04/11/2026): se usa por ahora el bundle MONAI preentrenado `prostate_mri_anatomy` (Apache 2.0, entrenado con Prostate158). Licencias y riesgos revisados en `docs-tecnicos/modelo-y-licencias.md`: apto para uso académico, no comercial y no clínico. El ajuste en Colab (`entrenamiento/`) queda como mejora posterior.
 2. **Datos de ejemplo**: MSD Task05_Prostate (CC-BY-SA 4.0). Era una decisión pendiente del equipo.
 3. **Límite de carga**: 500 MB (`PROSTA_MAX_UPLOAD_MB`).
 4. **Máscara de referencia**: se sube opcionalmente junto al estudio; se distingue por carpeta (`referencia/`) sin cambiar el modelo de datos.
@@ -36,7 +36,7 @@ Rama de trabajo: `desarrollo` (creada desde `main`), pendiente de revisión por 
 - **Ventana de privacidad**: un DICOM queda en el almacenamiento con sus datos originales entre la carga y el inicio del procesamiento (la arquitectura ubica la desidentificación en la tarea). Si se quiere eliminar del todo, mover `deidentify_dicom` a la admisión.
 - El aviso de evaluación sobre posible sesgo por datos de entrenamiento está documentado en el informe.
 - La clave `PROSTA_SECRET_KEY` de `.env.example` es de ejemplo; `scripts/instalar.sh` genera una aleatoria.
-- **Ajuste ligero del modelo** (Acta riesgo 1, matriz req. 3.4): preparado en `entrenamiento/` y no ejecutado. El cuaderno de Colab clona el repositorio, así que requiere publicar la rama. Regla de adopción: usar el modelo ajustado si su Dice en el conjunto de prueba es ≥ 0,8925; si no, conservar el preentrenado y documentarlo.
+- **Ajuste ligero del modelo** (Acta riesgo 1, matriz req. 3.4): pospuesto por decisión del equipo; preparado en `entrenamiento/` y no ejecutado. El cuaderno de Colab clona el repositorio, así que requiere publicar la rama. Regla de adopción: usar el modelo ajustado si su Dice en el conjunto de prueba es ≥ 0,8925; si no, conservar el preentrenado y documentarlo.
 - Pendiente del equipo: actualizar la inconsistencia I-08 (la API ya está definida en `docs-tecnicos/especificacion-tecnica.md`) e I-02 (el botón dice «Procesar» en la aplicación).
 
 ## Cómo retomar
